@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DecoratorDemo
 {
@@ -10,7 +6,13 @@ namespace DecoratorDemo
     {
         public static void Main()
         {
-            AsIsDemo.Run();
+            // uncomment one demo at a time to revise
+            // the way system works:
+            //  # before meeting new requiremetns - AsIsDemo
+            //  # after meeting the new requirements - ToBeDemo
+
+            //AsIsDemo.Run();
+            ToBeDemo.Run();
 
             Console.ReadKey();
         }

@@ -15,16 +15,24 @@ using System;
 
 namespace DecoratorDemo
 {
+    //public interface IKnight
+    //{
+    //    int LifeBar { get; }
+    //    int Damage { get; }
+    //    bool Attack(IKnight enemy);
+    //    bool Defend(IKnight enemy);
+    //}
+
     public abstract class Knight
     {
         /// <summary>
         /// Lifebar, vitality points of the knight
         /// </summary>
-        public int LifeBar { get; protected set; }
+        public virtual int LifeBar { get; protected internal set; }
         /// <summary>
         /// Damage caused by the knight when it attacks
         /// </summary>
-        public int Damage { get; protected set; }
+        public virtual int Damage { get; protected internal set; }
 
         /// <summary>
         /// Attack other knight
