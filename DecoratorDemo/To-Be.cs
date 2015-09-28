@@ -3,11 +3,15 @@
 // Let's add next spells:
 // DoubleDamage (double the damage caused by a knight) - that lasts for one turn, 
 // Dexterity (give 70% probability for getting off the damage, to dodge) - lasts for three turns
-// DamageReturn (for any damage taken by knight, send 50% of the damage back to the enemy it caused) - lasts for one turn
+// DamageReturn (for any damage taken by knight, send 50% of the damage back to the enemy it caused) - lasts for N turns
 // Weakness (halve the damage of knight that has been casted on) - lasts for one turn
 // 
 // Below the implementation by using decorator pattern. Notice we are not changing any of the old code, 
 // only adding new functionality, i.e. following the Open/Closed Principle.
+//
+// For more, you can also look for classic decorator implementation 
+// for "pizza/bakery/coffee toppings & proper pricing" on the Web 
+// for ex: http://www.codeproject.com/Articles/479635/UnderstandingplusandplusImplementingplusDecoratorp
 
 using System;
 
@@ -49,6 +53,10 @@ namespace DecoratorDemo
         }
     }
 
+    /// <summary>
+    /// DoubleDamage (double the damage caused by a knight) - that lasts for one turn
+    /// decorates the Attack method of Knight class
+    /// </summary>
     public class DoubleDamageSpell : SpellDecorator
     {
         public DoubleDamageSpell(Knight toCastSpellOn)
@@ -76,6 +84,10 @@ namespace DecoratorDemo
         }
     }
 
+    /// <summary>
+    /// Weakness (halve the damage of knight that has been casted on) - lasts for one turn
+    /// decorates the Attack method of Knight class
+    /// </summary>
     public class WeaknessSpell : SpellDecorator
     {
         public WeaknessSpell(Knight toCastSpellOn)
@@ -103,6 +115,10 @@ namespace DecoratorDemo
         }
     }
 
+    /// <summary>
+    /// DamageReturn (for any damage taken by knight, send 50% of the damage back to the enemy it caused) - lasts for N turns
+    /// decorates the Defend method of Knight class
+    /// </summary>
     public class DamageReturnSpell : SpellDecorator
     {
         public DamageReturnSpell(Knight toCastSpellOn)
@@ -132,6 +148,10 @@ namespace DecoratorDemo
         }
     }
 
+    /// <summary>
+    /// Dexterity (give 70% probability for getting off the damage, to dodge) - lasts for three turns
+    /// decorates the Defend method of Knight class
+    /// </summary>
     public class DexteritySpell : SpellDecorator
     {
         private Random _r;

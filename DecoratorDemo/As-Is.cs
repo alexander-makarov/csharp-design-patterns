@@ -37,11 +37,14 @@ namespace DecoratorDemo
         {
             Console.WriteLine("{0} attacks!", this);
             var isDefeated = !enemy.Defend(this);
-            //Console.WriteLine("{0} lifebar={1} now.", enemy, enemy.LifeBar);
-            //Console.WriteLine("{0} attacks! {1} lifebar={2} now.", this, enemy, enemy.LifeBar);
             return isDefeated;
         }
 
+        /// <summary>
+        /// Deffend ourselves
+        /// </summary>
+        /// <param name="enemy">other knight, the enemy</param>
+        /// <returns>true only when knight is still aliv</returns>
         public virtual bool Defend(Knight enemy)
         {
             Console.WriteLine("{0} defends!", this);
@@ -92,6 +95,9 @@ namespace DecoratorDemo
             Kn2 = kn2;
         }
 
+        /// <summary>
+        /// Battling in turns
+        /// </summary>
         public void BeginBattle()
         {
             Console.WriteLine("{0} [Lifebar={1} Damage={2}]\r\nVS\r\n{3} [Lifebar={4} Damage={5}]\r\n", 
